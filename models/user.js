@@ -2,20 +2,20 @@
 const bcrypt = require('bcrypt');
 module.exports = (sequelize, DataTypes) => {
   const user = sequelize.define('user', {
-    email: {
-      type: DataTypes.STRING,
-      validate: {
-        isEmail: {
-          msg: 'Invalid email adress'
-        }
-      }
-    },
-    name: {
+   name: {
       type: DataTypes.STRING,
       validate: {
         len: {
           args: [1, 99],
           msg: 'Name must be between 1 and 99 characters'
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: {
+          msg: 'Invalid email adress'
         }
       }
     },
