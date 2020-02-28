@@ -65,7 +65,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile', {user});
   });
 });
-
+//adding to favorites
 app.post('/profile', function(req, res) {
   db.usersMakeups.findOrCreate({
     where: {
@@ -76,7 +76,7 @@ app.post('/profile', function(req, res) {
     res.redirect('/profile');
   });
 });
-
+//deleting from favorites
 app.delete('/profile/:id', function(req, res) {
   db.usersMakeups.destroy({
     where: {

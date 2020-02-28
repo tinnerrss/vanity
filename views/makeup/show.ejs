@@ -1,16 +1,16 @@
 <div class="show-container">
 <% makeups.forEach((item)=>{ %>
     <% if (item) {%>
+        <h3><%= item.name %></h3>
         <div class="show-box">
             <a href="/makeup/products/<%=item.name%>/">
                 <img src="<%=item.image_link%>" class="showImg">
             </a>  
         </div>
-        <h3><%= item.name %></h3>
         <form method="POST" action="/profile">
             <input hidden type="text" name="id" value="<%= item.id %>">
             <button class="addbtn" type="submit">Add to Vanity</button>
-          </form>
+        </form>
     <% } %>
 <% }) %>     
 </div>
