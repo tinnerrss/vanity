@@ -10,11 +10,11 @@ const helmet = require('helmet');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const db = require('./models');
 const router = express.Router();
-const axios = require('axios');
+const methodOverride = require('method-override');
 
 
 app.set('view engine', 'ejs');
-
+app.use(methodOverride("_method"));
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
@@ -54,7 +54,38 @@ app.get('/', function(req, res) {
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
+  db.user.findOne({
+    where: {
+      id: req.user.id
+    },
+    include: [
+      db.makeup
+    ]
+  }).then(function(user) {
+    res.render('profile', {user});
+  });
+});
+
+app.post('/profile', function(req, res) {
+  db.usersMakeups.findOrCreate({
+    where: {
+      makeupId: req.body.id,
+      userId: req.user.id
+    }
+  }).then(function() {
+    res.redirect('/profile');
+  });
+});
+
+app.delete('/profile/:id', function(req, res) {
+  db.usersMakeups.destroy({
+    where: {
+      makeupId: req.body.id,
+      userId: req.user.id
+    }
+  }).then(function() {
+    res.redirect('/profile');
+  });
 });
 
 app.use('/auth', require('./controllers/auth'));

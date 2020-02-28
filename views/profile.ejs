@@ -1,1 +1,12 @@
 <h1>My Vanity</h1>
+<% user.makeups.forEach(function(fav) {%>
+    <ul>
+        <li>
+            <a href="/makeup/products/<%=fav.name%>/"><%= fav.name %></a>
+            <form method="post" action="/profile/<%=fav.id%>/?_method=DELETE">
+                <input type="hidden" name="id" value="<%=fav.id%>">
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+    </ul>
+<%})%>

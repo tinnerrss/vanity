@@ -8,10 +8,31 @@
         </div>
         <h3><%= item.name %></h3>
         <form method="POST" action="/profile">
-            <input hidden type="text" name="name" value="<%= item.name %>">
-            <input hidden type="text" name="image_link" value="<%= item.image_link %>">
+            <input hidden type="text" name="id" value="<%= item.id %>">
             <button class="addbtn" type="submit">Add to Vanity</button>
           </form>
     <% } %>
 <% }) %>     
 </div>
+<!-- 
+<% for(let i = 0; i < 10; i++) { %>
+    <div class="show-container">
+        <% let item = makeups %>
+        <% let start = i * 6 %>
+        <% for(let j = start; j < 6 + start; j++){ %>
+        
+            <div class="show-box">
+                <a href="/makeup/products/<%=item.name%>/">
+                    <img src="<%=item.image_link%>" class="showImg">
+                </a>  
+            </div>
+            <h3><%= item.name %></h3>
+            <form method="POST" action="/profile">
+                <input hidden type="text" name="name" value="<%= item.name %>">
+                <input hidden type="text" name="image_link" value="<%= item.image_link %>">
+                <button class="addbtn" type="submit">Add to Vanity</button>
+              </form>
+
+         <% } %>
+    </div>
+<% } %> -->

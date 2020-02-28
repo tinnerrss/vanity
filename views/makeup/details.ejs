@@ -26,6 +26,13 @@
         <input type="hidden" name="makeupId" value="<%= makeupItem.id %>">
         <button type="submit" class="submit-button">Submit</button>
       </form>
-      
-
+</div>
+<div class="comment-container">
+    <% comments.forEach(function(comment) {%>
+        <ul>
+            <li>
+                <%= comment.content %>
+            </li>
+        </ul>
+    <%})%>
 </div>

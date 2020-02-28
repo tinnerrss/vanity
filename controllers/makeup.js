@@ -31,7 +31,7 @@ router.get('/products/:name', isLoggedin,function(req, res) {
     }).then(function(makeupItem) {
         // console.log(makeupItem)
         makeupItem.getComments().then(comments =>{
-            console.log(comments);
+            // console.log(comments);
             res.render('makeup/details', {makeupItem, comments})
         })
     }).catch(function(error) {
@@ -57,6 +57,7 @@ router.post('/products/:name', function(req, res) {
           })
     })
   })
+
 
 
 module.exports = router;
