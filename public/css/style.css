@@ -4,9 +4,20 @@
     box-shadow: .1em .1em hotpink;
     color: white;
 }
+.title {
+    margin: auto; 
+    font-size: xx-large;
+    text-align: center;
+}
 
 .red {
     background-color: red;
+}
+h1 {
+    margin: 0;
+}
+h3 {
+    margin: 5px;
 }
 
 .green {
@@ -20,6 +31,15 @@
     width: 100%;
     height: 100%;
 }
+.nav-dec {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.nav-pic {
+    width: 80%;
+    /* height: 100%; */
+}
 
 .nav-container {
     background-image: url("https://library.kissclipart.com/20190131/pue/kissclipart-text-ornament-picture-frames-6b827b310c5df3ce.png");
@@ -29,6 +49,8 @@
     justify-content: space-between;
     align-items: center;
     background: white;
+    padding: 0;
+    margin: 0;
 
 }
 /* Dropdown Button */
@@ -132,6 +154,16 @@
     width: 100%;
     height: 100%;
 }
+.prof-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.profBox-container {
+    width: 225px;
+    height: 300px;
+    text-align: center;
+}
 .prof-box {
     width: 200px;
     height: 200px;
@@ -168,13 +200,29 @@
 .showImg {
     width: 100%;
     height: 100%;
-
+}
+.show-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.showBox-container {
+    width: 225px;
+    height: 300px;
+    text-align: center;
 }
 .show-box {
     width: 200px;
     height: 200px;
     border: 1px solid black;
-
+    padding: 0;
+    margin: auto;
+}
+.showTitle {
+    width: 100%;
+    height: 70px;
 }
 .deet-container {
     display: flex;

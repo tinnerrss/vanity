@@ -1,11 +1,17 @@
 <h1>My Vanity</h1>
+<div class="prof-container">
 <% user.makeups.forEach(function(fav) {%>
-    <%= fav.name %>
-    <div class="prof-box">
+    <div class="profBox-container">
+        <div class="prof-box">
             <a href="/makeup/products/<%=fav.name%>/"><img src="<%=fav.image_link%>" class="profImg"></a>
+        </div>
+        <div class="prof-title">
+            <h3><%= fav.name %></h3>
+            <form method="post" action="/profile/<%=fav.id%>/?_method=DELETE">
+                <input type="hidden" name="id" value="<%=fav.id%>">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
     </div>
-    <form method="post" action="/profile/<%=fav.id%>/?_method=DELETE">
-        <input type="hidden" name="id" value="<%=fav.id%>">
-        <input type="submit" value="Delete">
-    </form>
 <%})%>
+</div>
