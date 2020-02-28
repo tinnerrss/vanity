@@ -20,11 +20,12 @@
           <div class="dropdown-content">
             <a href="/">Home</a>
             <% if (currentUser) { %>
-              <a href="/auth/logout">Logout</a>
               <a href="/profile">Profile</a>
+              <a href="/makeup">Browse Categories</a>
+              <a href="/auth/logout">Log Out</a>
               <% } else { %>
-                <a href="/auth/signup">Signup</a>
-                <a href="/auth/login">Login</a>
+                <a href="/auth/signup">Sign Up</a>
+                <a href="/auth/login">Log In</a>
                 <% } %>    
           </div>
         </div>

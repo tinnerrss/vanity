@@ -1,0 +1,17 @@
+<div class="show-container">
+<% makeups.forEach((item)=>{ %>
+    <% if (item) {%>
+        <div class="show-box">
+            <a href="/makeup/products/<%=item.name%>/">
+                <img src="<%=item.image_link%>" class="showImg">
+            </a>  
+        </div>
+        <h3><%= item.name %></h3>
+        <form method="POST" action="/profile">
+            <input hidden type="text" name="name" value="<%= item.name %>">
+            <input hidden type="text" name="image_link" value="<%= item.image_link %>">
+            <button class="addbtn" type="submit">Add to Vanity</button>
+          </form>
+    <% } %>
+<% }) %>     
+</div>

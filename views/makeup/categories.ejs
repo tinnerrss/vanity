@@ -1,0 +1,16 @@
+<h1 class="cat-title">Categories</h1>
+
+<% for(let i = 0; i < 2; i++) { %>
+    <div class="cat-container">
+        <% let start = i * 4 %>
+        <% for(let j = start; j < 4 + start; j++){ %>
+        
+            <div class="cat-box">
+                <a href="/makeup/<%=categories[j].name%>">
+                    <img src="<%=categories[j].imgUrl%>" class="catImg">
+                </a>  
+            </div>
+
+         <% } %>
+    </div>
+<% } %>

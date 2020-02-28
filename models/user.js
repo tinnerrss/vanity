@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   user.associate = function(models) {
-    // associations can be defined here
+    models.user.belongsToMany(models.makeup, { through: models.usersMakeups });
   };
   //compares entered password to hased password
   user.prototype.validPassword = function(passwordTyped) {

@@ -1,0 +1,31 @@
+<div class="deet-container">
+    <div class="deetImg-container">
+        <img src="<%= makeupItem.image_link%>" class="deetImg">
+    </div>
+    <div class="deetInfo">
+        <h1><%= makeupItem.name %></h1>
+        <p>
+            Brand: <%= makeupItem.brand %>
+        </p>
+        <p>
+            Price: $<%= makeupItem.price %>
+        </p>
+        <p>
+            Description: <%= makeupItem.description%>
+        </p>
+        <a href="<%= makeupItem.product_link %>"><button>Buy Here</button></a>
+    </div>
+</div>
+<div class="deet-form">
+    <h1>What do you think about this product?</h1>
+    <form method="POST" action="/makeup/products/<%= makeupItem.name %>">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <label for="content">Comment:</label>
+        <input type="text" name="content">
+        <input type="hidden" name="makeupId" value="<%= makeupItem.id %>">
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+      
+
+</div>
