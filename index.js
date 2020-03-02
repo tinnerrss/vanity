@@ -53,11 +53,11 @@ app.get('/', function(req, res) {
     const makeups = makeupInfo.map((makeup) => {
       if(makeup.product_type === req.params.name) {
         return makeup 
-    }
+      }
+    })
+    res.render('index', { user: req.user, makeups });
+    console.log(`User is ${req.user ? req.user.name : 'not logged in'}`)
   })
-  console.log(`User is ${req.user ? req.user.name : 'not logged in'}`)
-  res.render('index', { user: req.user, makeups });
-})
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
