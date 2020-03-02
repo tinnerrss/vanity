@@ -32,7 +32,7 @@ router.get('/products/:name', isLoggedin,function(req, res) {
         // console.log(makeupItem)
         makeupItem.getComments().then(comments =>{
             // console.log(comments);
-            res.render('makeup/details', {makeupItem, comments})
+            res.render('makeup/details', {makeupItem, comments, url: req.originalUrl})
         })
     }).catch(function(error) {
         console.log(error)
@@ -50,7 +50,7 @@ router.post('/products/:name', function(req, res) {
             makeupId: req.body.makeupId
           }).then(function(comment) {
               makeup.addComment(comment);
-            res.redirect(`/makeup/products/${req.params.name}`)
+                res.redirect(`/makeup/products/${req.params.name}`)
           })
           .catch(function(error) {
             res.status(400).render('main/404')

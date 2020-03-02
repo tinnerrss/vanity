@@ -12,16 +12,44 @@
     <header>
       <div class="nav-container">
         <div class="title">
-          <h1>VANITY</h1>
-          <% include partials/alerts %>
+          <h1 id="van">VANITY</h1>
+          <!-- <% include partials/alerts %> -->
           <img src="https://www.loraincountyohc.net/uploads/1/4/3/8/14381434/1088782_orig.png" class="nav-pic">
         </div>
+        <% if (currentUser) {%>
+          <div class="navLink-container">
+              <div class="nav-box">
+                <a href="/makeup/lipstick" class="navLinks">Lipstick</a>
+              </div> 
+              <div class="nav-box">
+                <a href="/makeup/eyeshadow" class="navLinks">Eyeshadow</a>
+              </div> 
+              <div class="nav-box">
+                <a href="/makeup/blush" class="navLinks">Blush</a>
+              </div> 
+              <div class="nav-box">
+                <a href="/makeup/nail_polish" class="navLinks">Nail Polish</a>
+              </div> 
+              <div class="nav-box">
+                <a href="/makeup/eyeliner" class="navLinks">Eyeliner</a>
+              </div> 
+              <div class="nav-box">
+                <a href="/makeup/eyebrow" class="navLinks">Eyebrow</a>
+              </div> 
+              <div class="nav-box">
+                <a href="/makeup/foundation" class="navLinks">Foundation</a>
+              </div> 
+              <div class="nav-box">
+                <a href="/makeup/mascara" class="navLinks">Mascara</a>
+              </div>
+          </div> 
+        <%}%>
         <div class="dropdown">
-          <button class="dropbtn">Menu</button>
+          <button class="dropbtn"><img src="https://cdn4.iconfinder.com/data/icons/mobile-app-navigation-line-style/32/Hamburger_Menu-512.png" class="menuPic"></button>
           <div class="dropdown-content">
             <a href="/">Home</a>
             <% if (currentUser) { %>
-              <a href="/profile">Profile</a>
+              <a href="/profile">My Vanity</a>
               <a href="/makeup">Browse Categories</a>
               <a href="/auth/logout">Log Out</a>
               <% } else { %>
@@ -31,10 +59,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="nav-dec">
-        <img src="https://www.loraincountyohc.net/uploads/1/4/3/8/14381434/1088782_orig.png" class="nav-pic">
-      </div>
-             -->
           <%- body %>
     </header>
 

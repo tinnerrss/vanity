@@ -3,25 +3,38 @@
         <img src="<%= makeupItem.image_link%>" class="deetImg">
     </div>
     <div class="deetInfo">
-        <h1><%= makeupItem.name %></h1>
+        <div class="pageTitle">
+            <h1><%= makeupItem.name %></h1>
+            <hr/>
+        </div>
         <p>
-            Brand: <%= makeupItem.brand %>
+            <span class="bold">Brand:</span> <%= makeupItem.brand %>
         </p>
         <p>
-            Price: $<%= makeupItem.price %>
+            <span class="bold">Price:</span> $<%= makeupItem.price %>
         </p>
         <p>
-            Description: <%= makeupItem.description%>
+            <span class="bold">Description:</span> <%= makeupItem.description%>
         </p>
-        <a href="<%= makeupItem.product_link %>"><button>Buy Here</button></a>
-        <form method="POST" action="/profile">
-            <input hidden type="text" name="id" value="<%= makeupItem.id %>">
-            <button class="addbtn" type="submit">Add to Vanity</button>
-        </form>
+        <div class="deetbtnbox">
+            <div class="deetbtn">
+                <a href="<%= makeupItem.product_link %>"><button>Buy Here</button></a>
+            </div>
+            <div class="deetbtn">
+                <form method="POST" action="/profile">
+                    <input hidden type="text" name="id" value="<%= makeupItem.id %>">
+                    <button class="addbtn" type="submit">Add to Vanity</button>
+                </form>
+            </div>
+        </div>
+        <p>
+            
+        </p>
     </div>
 </div>
 <div class="deet-form">
     <h1>What do you think about this product?</h1>
+    <br>
     <form method="POST" action="/makeup/products/<%= makeupItem.name %>">
         <label for="name">Name:</label>
         <input type="text" name="name">
@@ -35,7 +48,11 @@
     <% comments.forEach(function(comment) {%>
         <ul>
             <li>
-                <%= comment.content %>
+                <p>
+                    <%= comment.content %>
+                </p>
+                <p><span class="bold">- <%= comment.name %></span></p>
+                <hr/>
             </li>
         </ul>
     <%})%>

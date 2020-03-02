@@ -1,5 +1,5 @@
 <div class="show-container">
-<% makeups.forEach((item)=>{ %>
+<% makeups.forEach((item) => { %>
     <% if (item) {%>
     <div class="showBox-container">
         <div class="show-box">
@@ -14,10 +14,6 @@
                 <button class="addbtn" type="submit">Add to Vanity</button>
             </form>
         </div>
-        <!-- <form method="POST" action="/profile">
-            <input hidden type="text" name="id" value="<%= item.id %>">
-            <button class="addbtn" type="submit">Add to Vanity</button>
-        </form> -->
     </div>
     <% } %>
 <% }) %>     
