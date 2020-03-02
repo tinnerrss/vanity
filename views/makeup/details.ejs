@@ -18,12 +18,12 @@
         </p>
         <div class="deetbtnbox">
             <div class="deetbtn">
-                <a href="<%= makeupItem.product_link %>"><button>Buy Here</button></a>
+                <a href="<%= makeupItem.product_link %>"><button class="submit-button">Buy Here</button></a>
             </div>
             <div class="deetbtn">
                 <form method="POST" action="/profile">
                     <input hidden type="text" name="id" value="<%= makeupItem.id %>">
-                    <button class="addbtn" type="submit">Add to Vanity</button>
+                    <button class="submit-button" type="submit">Add to Vanity</button>
                 </form>
             </div>
         </div>

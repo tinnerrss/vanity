@@ -12,7 +12,7 @@
     text-align: center;
     padding: 0px;
 }
-button {
+.submit-button {
     border: 1px solid black;
 }
 
@@ -35,6 +35,9 @@ li {
 }
 .homepage {
     position: absolute;
+    height: 100%;
+    width: 100%;
+
 }
 
 .homeImg {
@@ -157,12 +160,14 @@ a:hover {
     left: 0;
     border: none;
     width: 200px;
-    height: 150px;
+    height: 100px;
     text-align: center;
     z-index: 3;
+    padding: 20px;
 }
 
 .signup-btn {
+    margin-top: 20px;
     padding: 15px;
     /* border: 1px solid white; */
     background-color: whitet;
@@ -170,14 +175,17 @@ a:hover {
 }
 .signup-container {
     position: absolute;
+    margin: auto;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    border: none;
+    width: 250px;
     height: 200px;
-    width: 400px;
-    margin: auto;
-    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    z-index: 3;
 }
 
 .login-form {
@@ -187,10 +195,12 @@ a:hover {
     right: 0;
     bottom: 0;
     left: 0;
+    padding: 20px;
     height: 200px;
-    width: 400px;
+    width: 250px;
     /* text-align: center; */
     border: 1px solid black;
+    text-align: center;
 }
 
 .profImg {

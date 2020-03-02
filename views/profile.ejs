@@ -11,7 +11,7 @@
             <h3><%= fav.name %></h3>
             <form method="post" action="/profile/<%=fav.id%>/?_method=DELETE">
                 <input type="hidden" name="id" value="<%=fav.id%>">
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="submit-button">
             </form>
         </div>
     </div>
